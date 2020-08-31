@@ -54,7 +54,6 @@ func resourceBoardRead(ctx context.Context, data *schema.ResourceData, meta inte
 
 func resourceBoardCreate(ctx context.Context, data *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	c := meta.(*miro.Client)
-	var diags diag.Diagnostics
 	name := data.Get("name").(string)
 	description := data.Get("description").(string)
 
@@ -69,13 +68,11 @@ func resourceBoardCreate(ctx context.Context, data *schema.ResourceData, meta in
 	}
 
 	data.SetId(board.ID)
-
-	return diags
+	return resourceBoardRead(ctx, data, meta)
 }
 
 func resourceBoardUpdate(ctx context.Context, data *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	c := meta.(*miro.Client)
-	var diags diag.Diagnostics
 	name := data.Get("name").(string)
 	description := data.Get("description").(string)
 
@@ -89,7 +86,7 @@ func resourceBoardUpdate(ctx context.Context, data *schema.ResourceData, meta in
 		return diag.FromErr(err)
 	}
 
-	return diags
+	return resourceBoardRead(ctx, data, meta)
 }
 
 func resourceBoardDelete(ctx context.Context, data *schema.ResourceData, meta interface{}) diag.Diagnostics {
