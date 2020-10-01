@@ -4,7 +4,7 @@
 
 # Terraform Provider for Miro
 
-The Terraform Spinnaker Miro is a plugin for Terraform that allows for the full lifecycle management of Miro API resources.   
+The Terraform Miro is a plugin for Terraform that allows for the full lifecycle management of Miro API resources.   
 This provider is maintained by [@KeisukeYamashita](https://github.com/KeisukeYamashita).
 
 ## Contributing
