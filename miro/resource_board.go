@@ -73,6 +73,7 @@ func resourceBoardCreate(ctx context.Context, data *schema.ResourceData, meta in
 
 func resourceBoardUpdate(ctx context.Context, data *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	c := meta.(*miro.Client)
+	id := data.Id()
 	name := data.Get("name").(string)
 	description := data.Get("description").(string)
 
@@ -81,7 +82,7 @@ func resourceBoardUpdate(ctx context.Context, data *schema.ResourceData, meta in
 		Description: description,
 	}
 
-	_, err := c.Boards.Update(ctx, req)
+	_, err := c.Boards.Update(ctx, id, req)
 	if err != nil {
 		return diag.FromErr(err)
 	}
