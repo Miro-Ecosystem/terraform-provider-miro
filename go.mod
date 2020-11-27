@@ -4,5 +4,5 @@ go 1.14
 
 require (
 	github.com/Miro-Ecosystem/go-miro v0.0.12
-	github.com/hashicorp/terraform-plugin-sdk/v2 v2.1.0
+	github.com/hashicorp/terraform-plugin-sdk/v2 v2.3.0
 )
