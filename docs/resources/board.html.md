@@ -21,7 +21,7 @@ The following arguments are supported:
 
 ## Import
 
-Applications can be imported using their Spinnaker application and pipeline name, e.g.
+Applications can be imported using their Miro board ID, e.g.
 
 ```
 $ terraform import miro_.myboard o9J_km_OSX8=
