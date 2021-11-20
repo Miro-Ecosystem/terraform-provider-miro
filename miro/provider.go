@@ -17,6 +17,7 @@ func Provider() *schema.Provider {
 				Type:        schema.TypeString,
 				Description: "Access key for Miro API",
 				Required:    true,
+				Sensitive:   true,
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
